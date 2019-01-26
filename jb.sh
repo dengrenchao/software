@@ -47,6 +47,8 @@ find / -name docker |xargs rm -rf;
 
 cd /etc/yum.repos.d/ && wget http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
+wget -P /home/docker/ http://10.1.2.17/software/111.tgz
+
 yum install -y  docker-ce-18.03.1.ce
 
 
