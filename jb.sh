@@ -29,7 +29,7 @@ sudo systemctl disabled firewalld
 
 #remove docker procedure
 
-sudo yum remove docker \
+sudo yum -y remove docker \
                 docker-client \
                 docker-client-latest \
                 docker-common \
