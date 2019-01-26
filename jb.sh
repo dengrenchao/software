@@ -1,6 +1,6 @@
 #!/bin/bash
-author:rice
-datetime:2019-01-26
+#author:rice
+#datetime:2019-01-26
 
 
 
@@ -42,7 +42,7 @@ sudo yum remove docker \
 
 #install docker
 
-cd /etc/yum.repo.d/ && wget http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+cd /etc/yum.repos.d/ && wget http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
 
 yum install -y  docker-ce-18.03.1.ce
 
