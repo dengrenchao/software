@@ -38,7 +38,10 @@ sudo yum -y remove docker \
                 docker-logrotate \
                 docker-selinux \
                 docker-engine-selinux \
-                docker-engine
+                docker-engine \
+				docker*
+
+find / -name docker |xargs rm -rf;
 
 #install docker
 
@@ -117,6 +120,7 @@ x1=${1}
 docker exec -it $x1 bash
 
 EOF
+chmod +x /bin/dockerpid
 
 docker ps -a 
 
