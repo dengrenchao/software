@@ -57,7 +57,7 @@ sudo tee /etc/docker/daemon.json <<-'EOF'
 }
 EOF
 sudo systemctl daemon-reload
-sudo systemctl enable docker && ssystemctl restart docker
+sudo systemctl enable docker && systemctl restart docker
 
 #docker create network
 docker network create --subnet=192.168.100.0/16 mynetwork
@@ -86,7 +86,7 @@ EOF
 #create Dockerfile file 
 sudo tee /home/docker/Dockerfile <<-'EOF'
 # base image
-FROM registry.cn-hangzhou.aliyuncs.com/ricek8s/uqsjsj:lnp70_v11
+FROM registry.cn-hangzhou.aliyuncs.com/ricek8s/uqsjsj:fdlnp70v0.1
 
 # MAINTAINER
 MAINTAINER uqsjsj@163.com
@@ -105,7 +105,7 @@ ENTRYPOINT  ["/bin/bash","run.sh"]
 
 EOF
 
-docker build lnp70_v11:v11.0 .
+docker build -t lnp70_v11:v11.0 .
 
 docker run -it -d -P  --restart=always  --network mynetwork --ip 192.168.10.100 --name test2 lnp70_v11:v11.0
 
